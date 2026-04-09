@@ -9,12 +9,7 @@ body {
     width: 100%;
 }
 
-.kimmykardashiann {
-    margin-left: 1rem;
-    width: 15rem;
-}
-
-.web_icon {
+.WorldImagePng {
     /* margin-left: 1rem; */
     width: 2.5rem;
 }
@@ -28,82 +23,4 @@ body {
     border:0.125rem solid #888;
     width: 100%;
     box-sizing: border-box;
-}
-
-.menu_left{
-    display:flex;
-    align-items:center;
-    gap:0.625rem;
-}
-
-.menu_rechts{
-    display:flex;
-    gap:2.5rem;
-}
-
-.menu_rechts a{
-    text-decoration:none;
-    color:black;
-    font-size:1.125rem;
-    font-weight:500;
-}
-
-.messages{
-    text-decoration: underline;
-    color:rgb(28, 203, 188);
-}
-
-.nav-btn-link {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color:black;
-    font-size:1.125rem;
-    font-weight:500;
-}
-
-.nav-item {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color:black;
-    font-size:1.125rem;
-    font-weight:500;
-}
-
-.approve_time {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color:rgb(5, 112, 13);
-    font-size:1.125rem;
-    font-weight:500;
-}
-
-.deny_time {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color:rgb(216, 17, 17);
-    font-size:1.125rem;
-    font-weight:500;
-}
-
-.Titel {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color:black;
-    font-size:1.125rem;
-    font-weight:500;
 }
