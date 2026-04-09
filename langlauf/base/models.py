@@ -13,11 +13,9 @@ class Profile(models.Model):
 
       user = models.OneToOneField(User, on_delete=models.CASCADE)
       city = models.CharField(max_length=100)
-      date_of_birth = models.DataField(
+      date_of_birth = models.DateField()
       favorite_method = models.CharField(max_length=50, choices=BREW_METHODS)
 
       def __str__(self):
           return f"{self.user.username} – profiel"
-      
-      )
 # Create your models here.
