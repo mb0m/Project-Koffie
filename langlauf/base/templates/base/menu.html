@@ -1,3 +1,16 @@
-<nav>
-    <a href="/">Home</a>
+{% load static %}
+<nav class="main_menu">
+    <div class="menu_left">
+        <img src="{% static 'base/coffee_emblem.png' %}" alt="coffee icon logo" class="coffee_icon">
+        <div class="site_text">
+            <a href="{% url 'index' %}" class="Titel"><strong>Coffee Bean Collector</strong></a><br>
+            <small>Martin & Mustafa</small>
+        </div>
+    </div>
+    
+    {% if not user.is_authenticated %}
+            <a href="{% url 'login' %}" class="nav-item">Login</a>
+        <a href="{% url 'register' %}" class="nav-item">Sign up</a>
+    
+    {% endif %}
 </nav>
