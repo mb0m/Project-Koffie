@@ -24,3 +24,9 @@ def register(request):
             # Log the user in and redirect to index
             login(request, user)
             return redirect("index")
+
+    else:
+        form = UserCreationForm()
+
+    context = {"form": form}
+    return render(request, "registration/register.html", context)

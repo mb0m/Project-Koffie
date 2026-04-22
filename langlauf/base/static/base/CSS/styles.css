@@ -11,8 +11,8 @@ body {
 }
 
 .coffee_icon {
-    /* margin-left: 1rem; */
-    width: 2.5rem;
+    margin-left: -1rem;
+    width: 3.5rem;
 }
 
 .main_menu{
@@ -36,4 +36,26 @@ body {
 .menu_rechts{
     display:flex;
     gap:2.5rem;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color:black;
+    font-size:1.125rem;
+    font-weight:500;
+}
+
+.Titel {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color:black;
+    font-size:1.125rem;
+    font-weight:500;
 }
