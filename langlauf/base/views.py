@@ -23,8 +23,23 @@ def menu(request):
 
 
 @login_required
-def page1(request):
-    return render(request, "base/page1.html")
+def newsfeed(request):
+    return render(request, "base/newsfeed.html")
+
+
+@login_required
+def boon_toevoegen(request):
+    return render(request, "base/boon_toevoegen.html")
+
+
+@login_required
+def mijn_tastings(request):
+    return render(request, "base/mijn_tastings.html")
+
+
+@login_required
+def profiel(request):
+    return render(request, "base/profiel.html")
 
 
 def register(request):

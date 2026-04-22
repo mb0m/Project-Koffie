@@ -42,7 +42,7 @@ body {
     gap:2.5rem;
 }
 
-.nav-item {
+.Titel {
     background: none;
     border: none;
     padding: 0;
@@ -53,13 +53,22 @@ body {
     font-weight:500;
 }
 
-.Titel {
-    background: none;
-    border: none;
-    padding: 0;
+.nav-item {
+    display: inline-block; /* Dit zorgt ervoor dat t goed gaat werken op <a> tags, dus links */
+    background: transparent;
+    border: 2px solid rgb(101, 67, 33);
+    color: rgb(101, 67, 33);
+    padding: 0.35rem 0.9rem;
+    border-radius: 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
     cursor: pointer;
+    letter-spacing: 0.02em;
     text-decoration: none;
-    color:black;
-    font-size:1.125rem;
-    font-weight:500;
+    transition: background 0.2s ease-in, color 0.2s ease-in;
+}
+
+.nav-item:hover {
+    background: rgb(101, 67, 33);
+    color: rgb(239, 217, 182);
 }

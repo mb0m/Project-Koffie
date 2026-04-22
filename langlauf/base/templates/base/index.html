@@ -2,10 +2,16 @@
 
 {% load static %} 
 {% block content %}
-    <img src="{% static 'base/turks_koffie.png' %}" alt="turkiye cafe" class="turkish_coffee_icon"> <br>
-    merhaba nasilisin cok guzel hajde hajde <br>
 
-    <a href=" {% url 'page1' %}">page1</a>
+
+    {% if user.is_staff %}
+        <h1>Merhaba, staff member</h1>
+
+    {% else %}
+        <h1>Merhaba, gebruiker</h1>
+    {% endif %}
+    <br>
+    <img src="{% static 'base/turks_koffie.png' %}" alt="turkiye cafe" class="turkish_coffee_icon"> <br>
 
 {% endblock content %}
 
