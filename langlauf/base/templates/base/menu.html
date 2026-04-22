@@ -12,5 +12,26 @@
             <a href="{% url 'login' %}" class="nav-item">Login</a>
         <a href="{% url 'register' %}" class="nav-item">Sign up</a>
     
+    
+    {% else %}
+        <div class="menu_rechts">
+            <a href=" {% url 'page1' %}">page1</a>
+            {% if user.is_staff %}
+                <a>You're a staff member</a>
+
+            {% else %}
+                <a>You're no staff member</a>
+            {% endif %}
+
+            <form action="{% url 'logout' %}" method="post" class="nav-item">
+                {% csrf_token %}
+                <button type="submit" class="nav-btn-link" class="nav-item">
+                    logout {{user.get_username}}
+                
+                </button>
+            </form>
+
+        </div>
+
     {% endif %}
 </nav>

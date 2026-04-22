@@ -2,10 +2,10 @@
 
 {% load static %} 
 {% block content %}
-    Welkom op de website van de langlaufvereneging enz enz <br>
+    <img src="{% static 'base/turks_koffie.png' %}" alt="turkiye cafe" class="turkish_coffee_icon"> <br>
+    merhaba nasilisin cok guzel hajde hajde <br>
 
-    <a href= {% url 'page1' %}>page1</a>
+    <a href=" {% url 'page1' %}">page1</a>
 
-    <img src="{% static "base/world.png" %}" alt="Worldimage" class="WorldImagePng">
 {% endblock content %}
 

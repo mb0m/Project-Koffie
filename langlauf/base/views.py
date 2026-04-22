@@ -24,7 +24,7 @@ def menu(request):
 
 @login_required
 def page1(request):
-    return render(request, "base/hello.html")
+    return render(request, "base/page1.html")
 
 
 def register(request):

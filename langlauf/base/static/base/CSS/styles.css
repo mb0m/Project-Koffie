@@ -15,6 +15,10 @@ body {
     width: 3.5rem;
 }
 
+.turkish_coffee_icon {
+    width: 10rem;
+}
+
 .main_menu{
     display:flex;
     align-items:center;
