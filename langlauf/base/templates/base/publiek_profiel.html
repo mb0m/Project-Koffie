@@ -1,18 +1,18 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-<h1>Newsfeed</h1>
+<h1>{{ profiel_user.username }}</h1>
 
 {% if tastings %}
     {% for tasting in tastings %}
     <div class="tasting-item">
-        <strong><a href="{% url 'publiek_profiel' tasting.user.username %}">{{ tasting.user.username }}</a></strong> proefde <strong>{{ tasting.bean.name }}</strong>
+        <strong>{{ tasting.bean.name }}</strong>
         {% if tasting.bean.country_of_origin %}<em>({{ tasting.bean.country_of_origin }})</em>{% endif %}
         <span>{{ tasting.date }}</span>
         <p>{{ tasting.description }}</p>
     </div>
     {% endfor %}
 {% else %}
-    <p>Nog geen tastings geregistreerd.</p>
+    <p>{{ profiel_user.username }} heeft nog geen tastings.</p>
 {% endif %}
 {% endblock content %}

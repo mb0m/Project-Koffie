@@ -1,6 +1,19 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    <h1>Profiel</h1>
+<h1>Profiel</h1>
 
+<div class="profiel-info">
+    <p><strong>Gebruikersnaam:</strong> {{ request.user.username }}</p>
+    <p><strong>Woonplaats:</strong> {{ profile.city|default:"Nog niet ingevuld" }}</p>
+    <p><strong>Geboortedatum:</strong> {{ profile.date_of_birth|default:"Nog niet ingevuld" }}</p>
+    <p><strong>Favoriete zetmethode:</strong> {{ profile.get_favorite_method_display|default:"Nog niet ingevuld" }}</p>
+</div>
+
+<h2>Profiel bijwerken</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Opslaan</button>
+</form>
 {% endblock content %}

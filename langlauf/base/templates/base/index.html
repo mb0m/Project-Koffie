@@ -5,13 +5,13 @@
 
 
     {% if user.is_staff %}
-        <h1>Merhaba, staff member</h1>
+        <h1>Staff member</h1>
 
     {% else %}
-        <h1>Merhaba, gebruiker</h1>
+        <h1>Default gebruiker</h1>
     {% endif %}
     <br>
-    <img src="{% static 'base/turks_koffie.png' %}" alt="turkiye cafe" class="turkish_coffee_icon"> <br>
+
 
 {% endblock content %}
 

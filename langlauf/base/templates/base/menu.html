@@ -4,7 +4,7 @@
         <img src="{% static 'base/coffee_emblem.png' %}" alt="coffee icon logo" class="coffee_icon">
         <div class="site_text">
             <a href="{% url 'index' %}" class="Titel"><strong>Coffee Bean Collector</strong></a><br>
-            <small>Martin & Mustafa</small>
+            <small>Martin voor Kevin :D</small>
         </div>
     </div>
     
@@ -19,8 +19,12 @@
         <div class="menu_rechts">
             <a href=" {% url 'newsfeed' %}" class="nav-item">newsfeed</a>
             <a href=" {% url 'boon_toevoegen' %}" class="nav-item">boon toevoegen</a>
-            <a href=" {% url 'mijn_tastings' %}" class="nav-item">mijn tastings</a>
+            <a href=" {% url 'mijn_tastings' %}" class="nav-item">tasting toevoegen</a>
+            <a href="{% url 'eigen_beheer' %}" class="nav-item">eigen beheer</a>
             <a href=" {% url 'profiel' %}" class="nav-item">profiel</a>
+            {% if user.is_staff %}
+            <a href="{% url 'admin_bonen' %}" class="nav-item nav-item--admin">admin</a>
+            {% endif %}
             
             <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}

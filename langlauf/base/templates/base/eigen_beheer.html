@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h1>Eigen beheer</h1>
+
+{% if tastings %}
+    {% for tasting in tastings %}
+    <div class="tasting-item">
+        <strong>{{ tasting.bean.name }}</strong>
+        {% if tasting.bean.country_of_origin %}<em>({{ tasting.bean.country_of_origin }})</em>{% endif %}
+        <span>{{ tasting.date }}</span>
+        <p>{{ tasting.description }}</p>
+        <a href="{% url 'tasting_bewerken' tasting.id %}">Bewerken</a>
+        <form method="POST" action="{% url 'tasting_verwijderen' tasting.id %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" onclick="return confirm('Weet je zeker dat je deze tasting wilt verwijderen?')">Verwijderen</button>
+        </form>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>Je hebt nog geen tastings. <a href="{% url 'mijn_tastings' %}">Voeg er een toe</a>.</p>
+{% endif %}
+{% endblock content %}

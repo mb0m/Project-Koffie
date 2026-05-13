@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h1>Tasting bewerken</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Opslaan</button>
+    <a href="{% url 'eigen_beheer' %}">Annuleren</a>
+</form>
+{% endblock content %}

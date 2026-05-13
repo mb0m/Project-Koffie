@@ -1,6 +1,11 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    <h1>Mijn Tastings</h1>
+<h1>Tasting toevoegen</h1>
 
+<form method="POST">
+    {% csrf_token %}
+    {{ tasting_form.as_p }}
+    <button type="submit">Tasting opslaan</button>
+</form>
 {% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h1>Admin – bonen beheren</h1>
+
+<h2>Boon direct toevoegen</h2>
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="form_type" value="nieuwe_boon">
+    {{ boon_form.as_p }}
+    <button type="submit">Toevoegen (direct goedgekeurd)</button>
+</form>
+
+<hr>
+
+<h2>Wachten op goedkeuring ({{ pending_bonen.count }})</h2>
+{% if pending_bonen %}
+    {% for boon in pending_bonen %}
+    <div class="tasting-item">
+        <strong>{{ boon.name }}</strong>
+        {% if boon.country_of_origin %}<em>({{ boon.country_of_origin }})</em>{% endif %}
+        <form method="POST" style="display:inline;">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="goedkeuren">
+            <input type="hidden" name="boon_id" value="{{ boon.id }}">
+            <button type="submit">Goedkeuren</button>
+        </form>
+        <form method="POST" style="display:inline;">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="afkeuren">
+            <input type="hidden" name="boon_id" value="{{ boon.id }}">
+            <button type="submit">Afkeuren</button>
+        </form>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>Geen bonen wachten op goedkeuring.</p>
+{% endif %}
+{% endblock content %}
